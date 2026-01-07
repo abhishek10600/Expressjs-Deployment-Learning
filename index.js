@@ -4,6 +4,7 @@ const express = require("express")
 const app = express()
 
 const port = process.env.PORT
+const username = process.env.APP_USERNAME
 
 app.get("/", (req, res)=>{
     res.send("Hello World!")
@@ -19,6 +20,10 @@ app.get("/login", (req, res) =>{
 
 app.get("/register", (req, res) => {
     res.send("<h2>Create Your Account</h2>")
+})
+
+app.get("/username", (req, res) => {
+    res.send(`Welcome ${username} how are you ?`)
 })
 
 app.listen(port, ()=> {
