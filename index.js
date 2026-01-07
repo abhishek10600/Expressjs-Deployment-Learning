@@ -22,8 +22,20 @@ app.get("/register", (req, res) => {
     res.send("<h2>Create Your Account</h2>")
 })
 
+app.get("/test", (req, res) => {
+    res.json({
+        status: true,
+        "message": `Welcome ${username}`
+    })
+})
+
 app.get("/username", (req, res) => {
-    res.send(`Welcome ${username} how are you ?`)
+    res.json({
+        email: "abhi10sheksharma@gmail.com",
+        name: "Abhishek Sharma",
+        age: 25,
+        city: "Kolkata"
+    })
 })
 
 app.listen(port, ()=> {
